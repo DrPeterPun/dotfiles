@@ -1,0 +1,19 @@
+# funcao de abrir cenas com o default
+open(){
+    for i
+    do xdg-open $i &
+    done
+}
+
+#reload zsh
+alias szsh="source ~/.zshrc"
+
+#alias do vim
+alias vm="nvim"
+alias vim="nvim"
+alias nvm="nvim"
+
+# alias de nova comand line
+alias cmd="alacritty"
+
+alias qq="exit"
