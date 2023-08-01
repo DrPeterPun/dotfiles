@@ -1,0 +1,6 @@
+.zshrc
+.config/i3/config
+.config/nvim/init.lua
+.config/polybar/config
+.config/polybar/scripts
+.config/polybar/launch.sh

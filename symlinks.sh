@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if the input file exists
-input_file="directories.txt"
+input_file="files"
 if [[ ! -f "$input_file" ]]; then
     echo "Error: $input_file does not exist."
     exit 1
