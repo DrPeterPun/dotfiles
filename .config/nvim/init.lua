@@ -42,6 +42,14 @@ P.S. You can delete this when you're done too. It's your config now :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -72,6 +80,10 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
+
+  -- Cenas no files viewer
+  "nvim-tree/nvim-tree.lua",
+  "nvim-tree/nvim-web-devicons",
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -186,7 +198,8 @@ require('lazy').setup({
   --
   --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
+  {'Raimondi/delimitMate'}
 }, {})
 
 -- [[ Setting options ]]
@@ -196,8 +209,8 @@ require('lazy').setup({
 vim.o.hlsearch = false
 
 -- Make line numbers default
-vim.wo.nu = true
-vim.wo.rnu = true
+vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -264,6 +277,7 @@ require('telescope').setup {
     },
   },
 }
+
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
@@ -422,6 +436,7 @@ local servers = {
   },
 }
 
+
 -- Setup neovim lua configuration
 require('neodev').setup()
 
@@ -448,6 +463,7 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -493,6 +509,9 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- empty setup using defaults
+require("nvim-tree").setup()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
