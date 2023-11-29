@@ -14,6 +14,8 @@ alias vim="nvim"
 alias nvm="nvim"
 
 # alias de nova comand line
-alias cmd="alacritty"
+alias cmd="alacritty &"
 
 alias qq="exit"
+
+alias pyenv="source bin/activate"

@@ -9,8 +9,8 @@ fi
 
 # Create symbolic links for each directory path in the input file
 while IFS= read -r path; do
-    if [[ -d "$path" ]]; then
-        link_path="/home/$(basename "$path")"
+    if [[ -e "$path" ]]; then
+        link_path="/home/peter/$(echo "$path")"
         if [[ -e "$link_path" ]]; then
             echo "Error: Symbolic link already exists for $path"
         else

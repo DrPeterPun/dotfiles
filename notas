@@ -1,0 +1,2 @@
+# firefox hides toolbar when on fullscreen
+go to 'about:config' and adjusting 'browser.fullscreen.autohide'
