@@ -22,3 +22,17 @@ alias pyenv="source bin/activate"
 #
 # adicionar o latex ao path
 PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
+
+# alias git 
+alias ga="git add"
+alias gp="git push"
+
+# git commit
+gcm() {
+    # Get all arguments after the command keyword
+    local args="${@#gcm }"
+    # Print the arguments
+    git commit -m "$args"
+}
+
+# Alias the function to a shorter command name if desired
