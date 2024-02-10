@@ -19,3 +19,6 @@ alias cmd="alacritty &"
 alias qq="exit"
 
 alias pyenv="source bin/activate"
+#
+# adicionar o latex ao path
+PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
