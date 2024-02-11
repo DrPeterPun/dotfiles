@@ -25,6 +25,7 @@ PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
 
 # alias git 
 alias ga="git add"
+alias gaa="git add ."
 alias gp="git push"
 
 # git commit
