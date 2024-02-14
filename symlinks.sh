@@ -25,8 +25,10 @@ while IFS= read -r path; do
             if [[ -e "$link_path" ]]; then
                 mv "$link_path" "$link_path\.bkp"
             fi
-            ln -s "$path" "$link_path"
-            echo "Created symbolic link for $path"
+	    rlpath=$(realpath $path)
+            echo "ln -s \"$rlpath\" \"$link_path\""
+            ln -s "$rlpath" "$link_path"
+            echo "Created symbolic link for $rlpath"
         fi
     else
         echo "Error: $path is not a valid directory."
