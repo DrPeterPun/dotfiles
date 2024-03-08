@@ -27,6 +27,7 @@ PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
 alias ga="git add"
 alias gaa="git add ."
 alias gp="git push"
+alias gpl="git pull"
 
 # git commit
 gcm() {
@@ -36,4 +37,22 @@ gcm() {
     git commit -m "$args"
 }
 
-# Alias the function to a shorter command name if desired
+
+# git add commit push
+gga() {
+    # Get all arguments after the command keyword
+    local args="${@#gcm }"
+    git add -A
+    # Print the arguments
+    git commit -m "$args"
+    git push
+}
+
+# git commit push
+gcp() {
+    # Get all arguments after the command keyword
+    local args="${@#gcm }"
+    # Print the arguments
+    git commit -m "$args"
+    git push
+}
