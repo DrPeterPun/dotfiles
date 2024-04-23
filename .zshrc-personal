@@ -56,3 +56,9 @@ gcp() {
     git commit -m "$args"
     git push
 }
+
+# sourcing cargo
+. "$HOME/.cargo/env"
+
+# sourcing asdf
+. /opt/asdf-vm/asdf.sh
